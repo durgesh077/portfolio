@@ -1,0 +1,318 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+body {
+  display: flex;
+}
+
+#menuSection {
+  cursor: pointer;
+  flex-basis: 10vw;
+  background-color: #1f1f1f;
+  height: 100vh;
+}
+#menuSection div p {
+  padding: 4px;
+  text-align: center;
+  color: white;
+  font-size: 1.9em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#menuSection div p:first-of-type {
+  font-size: 5em;
+  color: cyan;
+  text-shadow: 5px 2px tomato;
+  font-family: sans-serif;
+}
+#menuSection #menus {
+  background-color: #2f2f2f;
+}
+#menuSection #menus li {
+  padding: 14px;
+  color: antiquewhite;
+  text-align: center;
+  transition: color 1s;
+  border-bottom: 0.2px solid rgb(62, 49, 49);
+}
+#menuSection #menus li:hover {
+  color: aqua;
+}
+#menuSection #menus li.selected {
+  background-color: lightgreen;
+}
+#menuSection .icon-x {
+  margin-top: 3em;
+  display: flex;
+  place-content: center;
+}
+#menuSection .icon-x li {
+  padding: 4px;
+  color: whitesmoke;
+}
+#menuSection .icon-x li:hover {
+  color: cyan;
+}
+
+#Home {
+  flex-grow: 1;
+  background-color: #222;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  height: 100vh;
+  -ms-scroll-snap-type: both mandatory;
+      scroll-snap-type: both mandatory;
+}
+#Home::-webkit-scrollbar {
+  display: none;
+}
+#Home > div {
+  scroll-snap-align: start;
+  padding-top: 7vh;
+  padding-left: 7vw;
+  position: relative;
+  height: 100vh;
+}
+#Home > div p:first-child {
+  margin-top: 25vh;
+}
+#Home > div p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 5;
+  position: relative;
+  font-family: sans-serif;
+  font-size: min(13vh, 16vw);
+  white-space: pre;
+  color: white;
+}
+#Home > div p span {
+  transition: font-style 1s;
+  font-style: 0;
+  color: cyan;
+  text-shadow: 5px 1px tomato;
+}
+#Home > div p span:hover {
+  font-style: oblique;
+  text-shadow: 5px 5px 5px tomato, -5px -5px 5px cyan;
+}
+#Home > div p:nth-child(3) {
+  color: darkcyan;
+}
+#Home > div b {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 5;
+  font-size: xx-large;
+  color: bisque;
+}
+#Home button {
+  display: block;
+  margin: 2%;
+  background-color: transparent;
+  border: 2px groove cyan;
+  color: cyan;
+  font-size: 1.8em;
+  width: 15rem;
+  text-align: left;
+  padding-left: 1em;
+  overflow: hidden;
+  border-radius: 6px;
+  position: relative;
+}
+#Home button::before {
+  transition: right 0.5s, left 0.5s;
+  transform-origin: left;
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  right: 100%;
+  background-color: rgb(128, 128, 128);
+  box-shadow: 3px 0 400px 40px green;
+}
+#Home button a {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+#Home button span {
+  color: purple;
+  display: inline-block;
+  transition: transform 1s 0.5s;
+  transform: translateX(2em);
+}
+#Home button:hover::before {
+  width: 100%;
+  right: 0;
+  transform-origin: right;
+}
+#Home button:hover span {
+  transform: translateX(0em);
+  color: blue;
+}
+
+.flower {
+  border-radius: 50%;
+  z-index: 1;
+  -webkit-animation: decr 5s linear 100ms;
+          animation: decr 5s linear 100ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.flower.f1 {
+  border: 7px solid green;
+}
+.flower.f2 {
+  border: 7px solid rgb(216, 105, 7);
+}
+.flower.f3 {
+  border: 7px solid rgb(233, 15, 127);
+}
+
+@-webkit-keyframes decr {
+  100% {
+    border: 0px;
+    width: 0;
+    height: 0;
+    opacity: 0%;
+  }
+}
+
+@keyframes decr {
+  100% {
+    border: 0px;
+    width: 0;
+    height: 0;
+    opacity: 0%;
+  }
+}
+#aboutWrapper {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: rgb(33, 32, 32);
+  position: relative;
+  display: grid;
+  place-items: right;
+  perspective: 200px;
+}
+
+#Image {
+  right: 20vw;
+  bottom: 30vh;
+  position: absolute;
+  background: black;
+  color: white;
+  margin: auto;
+  box-shadow: 0px 0px 2px 2px purple, 0px 0px 5px 5px navy;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#Image img {
+  position: relative;
+  top: 2px;
+}
+
+#Image rect {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 30px;
+  stroke-width: 5px;
+  stroke: cyan;
+  -webkit-animation: roundBorder 3s linear infinite;
+  animation: roundBorder 3s linear infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  fill: none;
+}
+
+#bdRnd {
+  padding: 0;
+  top: 0px;
+  display: block;
+  left: 0px;
+  margin: 0;
+  position: absolute;
+}
+
+@-webkit-keyframes roundBorder {
+  from {
+    stroke-dashoffset: 0%;
+  }
+  to {
+    stroke-dashoffset: 410%;
+  }
+}
+@keyframes roundBorder {
+  from {
+    stroke-dashoffset: 0%;
+  }
+  to {
+    stroke-dashoffset: 410%;
+  }
+}
+.jump {
+  display: inline-block;
+}
+.jump:hover {
+  -webkit-animation: jumper 0.5s 0s 2 both;
+          animation: jumper 0.5s 0s 2 both;
+}
+
+@-webkit-keyframes jumper {
+  80% {
+    transform: scale(1.2, 0.6);
+  }
+  90% {
+    transform: scale(1.1, 0.9);
+  }
+  100% {
+    transform: scaleY(1, 1);
+  }
+}
+
+@keyframes jumper {
+  80% {
+    transform: scale(1.2, 0.6);
+  }
+  90% {
+    transform: scale(1.1, 0.9);
+  }
+  100% {
+    transform: scaleY(1, 1);
+  }
+}
+#details {
+  padding: 8%;
+}
+#details h3 {
+  font-size: 4em;
+  color: aqua;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#details p {
+  width: 50%;
+  overflow: hidden;
+  font-size: large;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 3em;
+}/*# sourceMappingURL=style.css.map */

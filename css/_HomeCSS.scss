@@ -1,0 +1,111 @@
+#Home {
+    flex-grow: 1;
+    background-color: #222;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    height: 100vh;
+    scroll-snap-type: both mandatory;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &>div {
+        scroll-snap-align: start;
+        padding-top: 7vh;
+        padding-left: 7vw;
+        position: relative;
+        height: 100vh;
+
+        p:first-child {
+            margin-top: 25vh;
+        }
+
+        p {
+            user-select: none;
+            z-index: 5;
+            position: relative;
+            font-family: sans-serif;
+            font-size: min(13vh, 16vw);
+            white-space: pre;
+            color: white;
+
+            span {
+                transition: font-style 1s;
+                font-style: 0;
+
+                &:hover {
+                    font-style: oblique;
+                    text-shadow: 5px 5px 5px tomato , -5px -5px 5px cyan;
+                }
+
+                color: cyan;
+                text-shadow: 5px 1px tomato;
+            }
+
+            &:nth-child(3) {
+                color: darkcyan;
+            }
+        }
+
+        b {
+            user-select: none;
+            position: relative;
+            z-index: 5;
+            font-size: xx-large;
+            color: bisque;
+        }
+    }
+
+    button {
+        display: block;
+        margin: 2%;
+        background-color: transparent;
+        border: 2px groove cyan;
+        color: cyan;
+        font-size: 1.8em;
+        width: 15rem;
+        text-align: left;
+        padding-left: 1em;
+        overflow: hidden;
+        border-radius: 6px;
+        position: relative;
+
+        &::before {
+            transition: right 0.5s, left 0.5s;
+            transform-origin: left;
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            right: 100%;
+            background-color: rgb(128, 128, 128);
+            box-shadow: 3px 0 400px 40px green;
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        span {
+            color: purple;
+            display: inline-block;
+            transition: transform 1s 0.5s;
+            transform: translateX(2em);
+        }
+
+        &:hover::before {
+            width: 100%;
+            right: 0;
+            transform-origin: right;
+        }
+
+        &:hover span {
+            transform: translateX(0em);
+            color: blue;
+        }
+    }
+}

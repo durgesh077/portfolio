@@ -1,0 +1,100 @@
+#aboutWrapper{
+    scroll-snap-align: start;
+    height:100vh;
+    background-color: rgb(33, 32, 32);
+    position: relative;
+    display: grid;
+    place-items: right;
+    perspective: 200px;
+}
+#Image {
+    right:20vw;
+    bottom:30vh;
+    position: absolute;
+    background: black;
+    color: white;
+    margin: auto;
+    box-shadow: 0px 0px 2px 2px purple, 0px 0px 5px 5px navy;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#Image img {
+    position: relative;
+    top:2px
+}
+
+#Image rect {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 30px;
+    stroke-width: 5px;
+    stroke: cyan;
+    -webkit-animation: roundBorder 3s linear infinite;
+    animation: roundBorder 3s linear infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    fill: none;
+}
+
+#bdRnd {
+    padding: 0;
+    top: 0px;
+    display: block;
+    left: 0px;
+    margin: 0;
+    position: absolute;
+}
+
+@-webkit-keyframes roundBorder {
+    from {
+        stroke-dashoffset: 0%;
+    }
+
+    to {
+        stroke-dashoffset: 410%;
+    }
+}
+
+@keyframes roundBorder {
+    from {
+        stroke-dashoffset: 0%;
+    }
+
+    to {
+        stroke-dashoffset: 410%;
+    }
+}
+.jump{
+    display: inline-block;
+    &:hover{
+
+        animation: jumper 0.5s 0s 2 both;
+    }
+}
+@keyframes jumper {
+    80%{
+        transform: scale(1.2,0.6);
+    }
+    90% {
+        transform: scale(1.1, 0.9);
+    }
+    100% {
+        transform: scaleY(1, 1);
+    }
+}
+#details{
+    padding:8%;
+    h3{
+        font-size: 4em;
+        color:aqua;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    p{
+        width: 50%;
+        overflow: hidden;
+        font-size: large;
+        color:white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top:3em;
+    }
+}
